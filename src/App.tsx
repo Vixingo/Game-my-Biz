@@ -1,27 +1,36 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Login from "./ components/Login";
-import Signup from "./ components/Signup";
-
+import LoginPage from "./pages/LoginPage";
+import Signup from "./ components/Signup/Signup";
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import "./App.css";
 
-function App() {
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: "#ee238a",
+        },
+    },
+});
+function App(): JSX.Element {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route
-                    path="*"
-                    element={
-                        <main style={{ padding: "1rem" }}>
-                            <p>There's nothing here!</p>
-                        </main>
-                    }
-                />
-            </Routes>
-        </BrowserRouter>
+        <ThemeProvider theme={theme}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<LoginPage />} />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route
+                        path="*"
+                        element={
+                            <main style={{ padding: "1rem" }}>
+                                <p>There's nothing here!</p>
+                            </main>
+                        }
+                    />
+                </Routes>
+            </BrowserRouter>
+        </ThemeProvider>
     );
 }
 

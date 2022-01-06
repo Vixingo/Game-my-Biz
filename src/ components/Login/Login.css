@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    background-color: var(--bg_color);
+    border-radius: 100px;
+    padding: 80px;
+}
+.container .logo {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.container img {
+    width: 100%;
+}
+h2 {
+    color: #12498e;
+    font-weight: bold;
+}
+a:hover {
+    color: unset !important;
+}
+@media (max-width: 575px) {
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
