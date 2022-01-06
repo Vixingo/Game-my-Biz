@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import Signup from "./ components/Signup/Signup";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import "./App.css";
+import Homepage from "./pages/Homepage";
 
 const theme = createTheme({
     palette: {
@@ -20,6 +21,7 @@ function App(): JSX.Element {
                     <Route path="/" element={<LoginPage />} />
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/signup" element={<Signup />} />
+                    <Route path="/home" element={<Homepage />} />
                     <Route
                         path="*"
                         element={

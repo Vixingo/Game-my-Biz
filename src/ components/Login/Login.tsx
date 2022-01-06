@@ -10,7 +10,6 @@ import { TextField } from "@mui/material";
 
 import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
-import "./Login.css";
 
 const useStyles = makeStyles({
     root: {
@@ -29,6 +28,14 @@ const useStyles = makeStyles({
     },
     form_P: {
         color: "#ACACAC",
+    },
+    logo: {
+        maxWidth: " 400px",
+        margin: "0 auto",
+    },
+    h2: {
+        color: " #12498e",
+        fontWeight: "bold",
     },
 });
 const Android12Switch = styled(Switch)(({ theme }) => ({
@@ -72,7 +79,18 @@ function Login() {
     return (
         <>
             <section className={classes.root}>
-                <div className="container">
+                <Box
+                    className="container"
+                    sx={{
+                        padding: "80px",
+                        borderRadius: "100px",
+                        background: "var(--bg_color)",
+                        "@media screen and (max-width: 575px)": {
+                            paddingLeft: "30px",
+                            paddingRight: "30px",
+                        },
+                    }}
+                >
                     <div className="row">
                         <Box
                             className="col-lg-5"
@@ -85,11 +103,15 @@ function Login() {
                             }}
                         >
                             <div>
-                                <div className="logo">
-                                    <img src="../img/GameMyBiz.png" alt="" />
-                                </div>
+                                <Box className={classes.logo}>
+                                    <img
+                                        className="w-100"
+                                        src="../img/GameMyBiz.png"
+                                        alt=""
+                                    ></img>
+                                </Box>
                                 <div className={classes.form_div}>
-                                    <h2>Sign In</h2>
+                                    <h2 className={classes.h2}> Sign In</h2>
                                     <p className={classes.form_P}>
                                         Enter your company, username and
                                         password to sign in
@@ -172,6 +194,7 @@ function Login() {
                                             }}
                                         >
                                             <Button
+                                                href="/home"
                                                 variant="contained"
                                                 size="large"
                                                 className="fw-bold "
@@ -202,7 +225,11 @@ function Login() {
                         </Box>
                         <div className="col-lg-7 text-center">
                             <div className={classes.sec_logo}>
-                                <img src="../img/main_logo.png" alt="" />
+                                <img
+                                    src="../img/main_logo.png"
+                                    alt=""
+                                    className="w-100"
+                                />
                             </div>
                             <h5 className="fw-bold">
                                 Say goodbye to manual imports and hello to
@@ -229,7 +256,7 @@ function Login() {
                             </p>
                         </div>
                     </div>
-                </div>
+                </Box>
             </section>
         </>
     );

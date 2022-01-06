@@ -11,3 +11,12 @@
     --sec_bg_color: #12498e;
     --bg_linear_gra: linear-gradient(90deg, #ee238a 0%, #922790 100%);
 }
+/* .container img {
+    width: 100%;
+} */
+body {
+    background-color: #f8f9fa;
+}
+a:hover {
+    color: var(--sec_color) !important;
+}
