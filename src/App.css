@@ -16,6 +16,7 @@
 } */
 body {
     background-color: #f8f9fa;
+    overflow-x: hidden;
 }
 a:hover {
     color: var(--sec_color) !important;
