@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Signup from "./ components/Signup/Signup";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";

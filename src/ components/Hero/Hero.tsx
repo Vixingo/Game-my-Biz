@@ -6,19 +6,19 @@ const PerformData = [
     {
         tittle: "Revenue",
         amount: "$8,696",
-        percent: "+12%",
+        percent: 12,
         icon: "../img/dollar.png",
     },
     {
         tittle: "Rank",
         amount: "Breaker",
-        percent: "+8%",
+        percent: +8,
         icon: "../img/uparrow.png",
     },
     {
         tittle: "Jobs",
         amount: "90",
-        percent: "+6%",
+        percent: +6,
         icon: "../img/bag.png",
     },
 ];

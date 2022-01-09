@@ -3,18 +3,20 @@ import { ResponsiveStyleValue } from "@mui/system/styleFunctionSx";
 import { Property } from "csstype";
 import React, { useEffect } from "react";
 
-// let colorss: string;
-
 function Yetibox(props: {
     title: string;
     amount: string | number;
     percent: number;
     imgsrc: string;
 }): JSX.Element {
-    // useEffect(() => {
-    //     colorss = props.percent > 0 ? "#21A300" : "#FF0000";
-    //     console.log(colorss);
-    // });
+    let [colr, setColr] = React.useState("#21A300");
+    let [plus, setPlus] = React.useState(" ");
+    useEffect(() => {
+        setPlus(props.percent > 0 ? "+" : "");
+    });
+    useEffect(() => {
+        setColr(props.percent > 0 ? "#21A300" : "#FF0000");
+    });
     return (
         <>
             <Box
@@ -28,7 +30,7 @@ function Yetibox(props: {
                 }}
             >
                 <Stack direction={"row"} justifyContent={"space-between"}>
-                    <Typography variant="h5" color={"#656565"} fontWeight={500}>
+                    <Typography variant="h6" color={"#656565"} fontWeight={500}>
                         {props.title}
                     </Typography>
                     <img
@@ -48,7 +50,8 @@ function Yetibox(props: {
                 >
                     {props.amount}
                 </Typography>
-                <Typography variant="h6" color={"#21A300"} textAlign={"right"}>
+                <Typography variant="h6" color={colr} textAlign={"right"}>
+                    {plus}
                     {props.percent}%
                 </Typography>
             </Box>

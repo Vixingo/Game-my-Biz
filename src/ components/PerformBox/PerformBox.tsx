@@ -1,13 +1,24 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { Path } from "typescript";
+import { useEffect } from "react";
 
 function PerformBox(props: {
     tittle: String;
     amount: Number | String;
-    percent: Number | string;
+    percent: Number;
     imgsrc: string | Path;
 }) {
+    let [colr, setColr] = React.useState("#21A300");
+    let [plus, setPlus] = React.useState(" ");
+    useEffect(() => {
+        setPlus(props.percent > 0 ? "+" : "");
+    });
+
+    useEffect(() => {
+        setColr(props.percent > 0 ? "#21A300" : "#FF0000");
+    });
+
     return (
         <>
             <Box
@@ -58,13 +69,14 @@ function PerformBox(props: {
                     >
                         {props.amount}
                         <Typography
+                            color={colr}
                             variant="h6"
                             sx={{
                                 ml: "16px",
-                                color: "#21A300",
                             }}
                         >
-                            {props.percent}
+                            {plus}
+                            {props.percent}%
                         </Typography>
                     </Typography>
 

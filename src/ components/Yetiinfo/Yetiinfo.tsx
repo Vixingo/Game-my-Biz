@@ -39,7 +39,7 @@ function Yetiinfo() {
             <div
                 className="container"
                 style={{
-                    margin: "100px auto",
+                    margin: "100px auto 10px auto",
                 }}
             >
                 <div className="row">
