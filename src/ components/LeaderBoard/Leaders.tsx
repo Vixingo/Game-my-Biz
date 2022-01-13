@@ -26,11 +26,14 @@ function Leaders() {
                             }}
                         >
                             <Typography variant="h4">2</Typography>
-                            <ArrowDropDownIcon fontSize="large" />
+                            <ArrowDropDownIcon
+                                fontSize="large"
+                                sx={{ fontSize: "50px" }}
+                            />
                             <img
                                 src="../img/P_2.png"
                                 alt=""
-                                width={"150px"}
+                                width={"120px"}
                                 style={{
                                     border: "2px solid #EE238A",
                                     boxShadow: "0px 18px 36px 5px #00000040",
@@ -38,11 +41,12 @@ function Leaders() {
                                     margin: "10px ",
                                 }}
                             />
-                            <Typography fontSize={"large"}>
+                            <Typography variant="h6" fontSize={"large"}>
                                 Courtney Henry
                             </Typography>
                             <Typography
                                 fontSize={"large"}
+                                variant="h6"
                                 sx={{ color: "#EE238A" }}
                             >
                                 8032
@@ -60,13 +64,18 @@ function Leaders() {
                             }}
                         >
                             <Typography variant="h4">1</Typography>
-                            <img src="../img/king.png" alt="" width={"50%"} />
+                            <img
+                                src="../img/king.png"
+                                alt=""
+                                width={"50%"}
+                                className="my-2"
+                            />
 
                             {/* <ArrowDropDownIcon fontSize="large" /> */}
                             <img
                                 src="../img/P_1.png"
                                 alt=""
-                                width={"150px"}
+                                width={"120px"}
                                 style={{
                                     border: "5px solid #EE238A",
                                     boxShadow:
@@ -75,11 +84,12 @@ function Leaders() {
                                     margin: "10px ",
                                 }}
                             />
-                            <Typography fontSize={"large"}>
+                            <Typography variant="h6" fontSize={"large"}>
                                 Wade Warren
                             </Typography>
                             <Typography
                                 fontSize={"large"}
+                                variant="h6"
                                 sx={{ color: "#EE238A" }}
                             >
                                 8122
@@ -95,11 +105,14 @@ function Leaders() {
                             }}
                         >
                             <Typography variant="h4">3</Typography>
-                            <ArrowDropUpIcon fontSize="large" color="primary" />
+                            <ArrowDropUpIcon
+                                sx={{ fontSize: "50px" }}
+                                color="primary"
+                            />
                             <img
                                 src="../img/P_3.png"
                                 alt=""
-                                width={"150px"}
+                                width={"120px"}
                                 style={{
                                     border: "2px solid #EE238A",
                                     boxShadow: "0px 18px 36px 5px #00000040",
@@ -107,11 +120,12 @@ function Leaders() {
                                     margin: "10px ",
                                 }}
                             />
-                            <Typography fontSize={"large"}>
+                            <Typography fontSize={"large"} variant="h6">
                                 Munzira Khan{" "}
                             </Typography>
                             <Typography
                                 fontSize={"large"}
+                                variant="h6"
                                 sx={{ color: "#EE238A" }}
                             >
                                 7884

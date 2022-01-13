@@ -50,6 +50,10 @@ function LeaderBoard(): JSX.Element {
                     backgroundImage: "url(../img/inter.png)",
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "100%",
+                    backgroundColor: "#FFF",
+                    borderRadius: "106px",
+                    boxShadow: "0px 18px 36px 6px rgba(135, 135, 135, 0.1)",
+                    mb: 5,
                 }}
             >
                 <section className="Home_tabs">
