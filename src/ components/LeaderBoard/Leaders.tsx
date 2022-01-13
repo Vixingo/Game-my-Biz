@@ -6,7 +6,7 @@ import React from "react";
 function Leaders() {
     return (
         <>
-            <section className="Leaders">
+            <section className="Leaders" style={{ marginBottom: "100px" }}>
                 <div className="container">
                     <Box
                         sx={{

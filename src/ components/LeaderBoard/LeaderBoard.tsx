@@ -2,7 +2,38 @@ import { Box } from "@mui/material";
 import React, { useState } from "react";
 import "./leader.css";
 import Leaders from "./Leaders";
+import ProgressBar from "./ProgressBar";
 
+const progressData = [
+    {
+        position: 4,
+        points: 6887,
+        userName: "Esther Howard",
+        progress: "80%",
+        imgsrc: "../img/P_4.png",
+    },
+    {
+        position: 5,
+        points: 5687,
+        userName: "Leslie Alexander",
+        progress: "70%",
+        imgsrc: "../img/P_5.png",
+    },
+    {
+        position: 6,
+        points: 5347,
+        userName: "Zeenath Asra",
+        progress: "60%",
+        imgsrc: "../img/P_6.png",
+    },
+    {
+        position: 7,
+        points: 4668,
+        userName: "Robert Fox",
+        progress: "50%",
+        imgsrc: "../img/P_7.png",
+    },
+];
 function LeaderBoard(): JSX.Element {
     const [toggleState, setToggleState] = useState(2);
 
@@ -72,7 +103,18 @@ function LeaderBoard(): JSX.Element {
                                     : "content"
                             }
                         >
-                            <Leaders />{" "}
+                            <Leaders />
+                            {progressData.map((val, Index) => {
+                                return (
+                                    <ProgressBar
+                                        position={val.position}
+                                        points={val.points}
+                                        userName={val.userName}
+                                        progress={val.progress}
+                                        imgsrc={val.imgsrc}
+                                    />
+                                );
+                            })}
                         </div>
                         <div
                             className={
