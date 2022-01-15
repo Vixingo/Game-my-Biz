@@ -21,3 +21,6 @@ body {
 a:hover {
     color: var(--sec_color) !important;
 }
+input:focus-visible {
+    outline: none;
+}

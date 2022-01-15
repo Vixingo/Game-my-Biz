@@ -19,9 +19,9 @@ function App(): JSX.Element {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<LoginPage />} />
-                    <Route path="/login" element={<LoginPage />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/home" element={<Homepage />} />
+                    <Route path="login" element={<LoginPage />} />
+                    <Route path="signup" element={<Signup />} />
+                    <Route path="home" element={<Homepage />} />
                     <Route
                         path="*"
                         element={
