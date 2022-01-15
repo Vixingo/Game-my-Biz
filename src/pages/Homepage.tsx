@@ -1,4 +1,5 @@
 import React from "react";
+import Activity from "../ components/Activity/Activity";
 import Appbar from "../ components/Appbar/Appbar";
 import Hero from "../ components/Hero/Hero";
 import LeaderBoard from "../ components/LeaderBoard/LeaderBoard";
@@ -13,6 +14,7 @@ function Homepage() {
             <Yetiinfo />
             <LeaderBoard />
             <Unclaimed />
+            <Activity />
         </>
     );
 }
