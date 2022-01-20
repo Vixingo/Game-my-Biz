@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import "./App.css";
 import Homepage from "./pages/Homepage";
 import Claimpage from "./pages/Claimpage";
+import Levelup from "./pages/Levelup";
 
 const theme = createTheme({
   palette: {
@@ -24,6 +25,7 @@ function App(): JSX.Element {
           <Route path="signup" element={<Signup />} />
           <Route path="home" element={<Homepage />} />
           <Route path="claim" element={<Claimpage />} />
+          <Route path="level" element={<Levelup />} />
           <Route
             path="*"
             element={
