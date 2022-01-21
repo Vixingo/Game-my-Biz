@@ -3,13 +3,13 @@ import FormGroup from "@mui/material/FormGroup";
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch, { SwitchProps } from "@mui/material/Switch";
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import GoogleIcon from "@mui/icons-material/Google";
 import { TextField } from "@mui/material";
 
 import Button from "@mui/material/Button";
-import Link from "@mui/material/Link";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
     root: {
@@ -150,18 +150,21 @@ function Login() {
                                             <input placeholder="Email" />
                                             <input placeholder="Password" />
                                         </Box>
-                                        <Link
-                                            href="#"
-                                            variant="body2"
+                                        <Typography
                                             sx={{
                                                 display: "block",
                                                 textAlign: "right",
                                                 color: "#9B9B9B",
                                             }}
-                                            underline="none"
                                         >
-                                            forgot password?
-                                        </Link>
+                                            {" "}
+                                            <Link
+                                                to={"#"}
+                                                style={{ color: "#9B9B9B" }}
+                                            >
+                                                forgot password?
+                                            </Link>
+                                        </Typography>
 
                                         <FormControlLabel
                                             sx={{
@@ -194,18 +197,26 @@ function Login() {
                                             }}
                                         >
                                             <Button
-                                                href="/home"
-                                                variant="contained"
-                                                size="large"
-                                                className="fw-bold "
                                                 sx={{
                                                     px: 6,
                                                     background:
                                                         "linear-gradient(90deg, #EE238A 0%, #922790 93.85%);",
                                                 }}
                                             >
-                                                SIGN IN
+                                                {" "}
+                                                <Link
+                                                    to={"/home"}
+                                                    style={{
+                                                        color: "#fff",
+                                                        textDecoration: "none",
+                                                        fontWeight: "bold",
+                                                        fontSize: "16px",
+                                                    }}
+                                                >
+                                                    SIGN IN
+                                                </Link>
                                             </Button>
+
                                             <span>or</span>
                                             <Button
                                                 size="large"
@@ -249,7 +260,13 @@ function Login() {
                                 }}
                             >
                                 Don’t have an accout?{" "}
-                                <Link href="#" underline="none">
+                                <Link
+                                    to={"#"}
+                                    style={{
+                                        textDecoration: "none",
+                                        color: "#EE238A",
+                                    }}
+                                >
                                     {" "}
                                     Sign up
                                 </Link>
