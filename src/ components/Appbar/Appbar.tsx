@@ -112,15 +112,17 @@ function Appbar() {
                                     </Link>
                                 </Box>
                             </Stack>
-                            <Avatar
-                                alt="Avatar"
-                                src="../img/profile.png"
-                                sx={{
-                                    width: 50,
-                                    height: 50,
-                                    filter: " drop-shadow(0px 10px 25px rgba(238, 35, 138, 0.23))",
-                                }}
-                            />
+                            <Link to={"/levelup"}>
+                                <Avatar
+                                    alt="Avatar"
+                                    src="../img/profile.png"
+                                    sx={{
+                                        width: 50,
+                                        height: 50,
+                                        filter: " drop-shadow(0px 10px 25px rgba(238, 35, 138, 0.23))",
+                                    }}
+                                />
+                            </Link>
                         </Toolbar>
                     </AppBar>
                 </Box>

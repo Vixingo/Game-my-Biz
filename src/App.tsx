@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
-import Signup from "./ components/Signup/Signup";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import "./App.css";
 import Homepage from "./pages/Homepage";
 import Claimpage from "./pages/Claimpage";
 import Levelup from "./pages/Levelup";
+import Level_1 from "./pages/Level_1";
 
 const theme = createTheme({
     palette: {
@@ -21,7 +21,7 @@ function App(): JSX.Element {
             <BrowserRouter>
                 <Route exact path="/" component={LoginPage} />
                 <Route exact path="/login" component={LoginPage} />
-                <Route exact path="/signup" component={Signup} />
+                <Route exact path="/levelup" component={Level_1} />
                 <Route exact path="/home" component={Homepage} />
                 <Route exact path="/claim" component={Claimpage} />
                 <Route exact path="/level" component={Levelup} />
