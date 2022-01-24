@@ -11,6 +11,7 @@ import { makeStyles } from "@mui/styles";
 import { useState } from "react";
 import Summery from "../ components/Summery/Summery";
 import IconButton from "@mui/material/IconButton";
+import Hub from "../ components/Hub/Hub";
 const useStyles = makeStyles({
     normal: {
         borderRadius: "0",
@@ -168,7 +169,7 @@ function Level_1() {
                             : classes.content
                     }
                 >
-                    <h1>2</h1>
+                    <Hub />
                 </div>
                 <div
                     className={
