@@ -12,6 +12,7 @@ import { useState } from "react";
 import Summery from "../ components/Summery/Summery";
 import IconButton from "@mui/material/IconButton";
 import Hub from "../ components/Hub/Hub";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles({
     normal: {
         borderRadius: "0",
@@ -48,6 +49,7 @@ function Level_1() {
         <>
             <Box
                 sx={{
+                    zIndex: "1100",
                     background: "#FF0080",
                     height: "100vh",
                     width: "50px",
@@ -86,11 +88,9 @@ function Level_1() {
                             margin: "0 auto",
                             marginBottom: "20px !important",
                         }}
-                    />
-                    <IconButton
-                        sx={{
-                            borderRadius: "0",
-                        }}
+                    />{" "}
+                    <Link
+                        to={"/"}
                         className={
                             toggleState === 1
                                 ? classes.activated
@@ -98,9 +98,16 @@ function Level_1() {
                         }
                         onClick={() => toggleTab(1)}
                     >
-                        <DashboardIcon />
-                    </IconButton>
-                    <IconButton
+                        <IconButton
+                            sx={{
+                                borderRadius: "0",
+                            }}
+                        >
+                            <DashboardIcon />
+                        </IconButton>
+                    </Link>
+                    <Link
+                        to={"/hub"}
                         className={
                             toggleState === 2
                                 ? classes.activated
@@ -108,9 +115,12 @@ function Level_1() {
                         }
                         onClick={() => toggleTab(2)}
                     >
-                        <HubIcon />
-                    </IconButton>
-                    <IconButton
+                        <IconButton>
+                            <HubIcon />
+                        </IconButton>{" "}
+                    </Link>
+                    <Link
+                        to={"/dashboard"}
                         className={
                             toggleState === 3
                                 ? classes.activated
@@ -118,8 +128,10 @@ function Level_1() {
                         }
                         onClick={() => toggleTab(3)}
                     >
-                        <SettingsIcon />
-                    </IconButton>
+                        <IconButton>
+                            <SettingsIcon />
+                        </IconButton>{" "}
+                    </Link>
                     <IconButton
                         className={
                             toggleState === 4
@@ -151,7 +163,7 @@ function Level_1() {
                     }}
                 />
             </Box>
-            <Box sx={{ marginLeft: "50px" }}>
+            {/* <Box sx={{ marginLeft: "50px" }}>
                 {" "}
                 <div
                     className={
@@ -198,7 +210,7 @@ function Level_1() {
                 >
                     <h1>5</h1>
                 </div>
-            </Box>
+            </Box> */}
         </>
     );
 }

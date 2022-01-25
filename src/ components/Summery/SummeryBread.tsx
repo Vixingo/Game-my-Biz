@@ -1,8 +1,10 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import HomeIcon from "@mui/icons-material/Home";
+import { useLocation } from "react-router-dom";
 
 function SummeryBread() {
+    const location = useLocation();
     return (
         <>
             <Box
@@ -16,6 +18,7 @@ function SummeryBread() {
                     position: "sticky",
                     top: "0",
                     zIndex: "1000",
+                    paddingLeft: "100px",
                 }}
             >
                 <HomeIcon />
@@ -35,7 +38,7 @@ function SummeryBread() {
                         fontSize: "14px",
                     }}
                 >
-                    &nbsp; Performance Summary Dashboard /{" "}
+                    &nbsp; Performance Summary Dashboard
                     <a
                         style={{
                             textDecoration: "none",
@@ -43,7 +46,7 @@ function SummeryBread() {
                         }}
                         href="level"
                     >
-                        Level Up
+                        {location.pathname}
                     </a>
                 </Typography>
             </Box>
