@@ -112,7 +112,7 @@ function Socialbox(props: { imgsrc: string; title: string }) {
         >
           {props.title}
         </Typography>
-        <SwitchUnstyled component={Root} {...label} defaultChecked />
+        {/* <SwitchUnstyled component={Root} {...label} defaultChecked /> */}
       </Box>
     </>
   );
