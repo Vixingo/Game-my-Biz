@@ -3,24 +3,16 @@ import { Typography } from "@mui/material";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import LSBtable from "./LSBtable";
 import Level_1 from "../../pages/Level_1";
+import SummeryBread from "../Summery/SummeryBread";
+import Dashboard from "./Dashboard";
 
 function LeaderSummaryBoard() {
     return (
         <>
-            <div className="container">
-                {" "}
-                <Typography
-                    color={"#252F40"}
-                    fontWeight={"600"}
-                    fontSize={"20px"}
-                    mb={2}
-                >
-                    {" "}
-                    <BarChartIcon sx={{ color: "#252F40" }} /> Level Up
-                    Requirements{" "}
-                </Typography>
-            </div>
-            <LSBtable />
+            {" "}
+            <SummeryBread />
+            <Dashboard />
+            {/* <LSBtable /> */}
         </>
     );
 }

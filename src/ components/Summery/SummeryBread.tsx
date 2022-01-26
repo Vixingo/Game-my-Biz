@@ -46,7 +46,13 @@ function SummeryBread() {
                         }}
                         href="level"
                     >
-                        {location.pathname}
+                        <Typography
+                            display={"inline"}
+                            sx={{ textDecoration: "underline" }}
+                        >
+                            {" "}
+                            {location.pathname === "/" ? "" : location.pathname}
+                        </Typography>
                     </a>
                 </Typography>
             </Box>
