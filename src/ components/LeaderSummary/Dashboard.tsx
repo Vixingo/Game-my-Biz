@@ -2,11 +2,14 @@ import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
 import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
 import MiniBox from "./MiniBox";
+import Point from "./Point";
+import Miniboxholder from "./Miniboxholder";
+import MainProfile from "./MainProfile";
 function Dashboard() {
     return (
         <>
-            <section className="Dashboard">
-                <div className="container">
+            <section className="Dashboard mb-5">
+                <div className="container ">
                     {" "}
                     <Stack
                         sx={{
@@ -41,14 +44,36 @@ function Dashboard() {
                     </Stack>
                     <Box
                         sx={{
+                            position: "relative",
                             background:
                                 "linear-gradient(135deg, #3A416F 0%, #141727 100%)",
+                            padding: "30px",
+                            borderRadius: "20px",
+                            boxShadow: " 0px 4px 4px rgba(0, 0, 0, 0.25)",
+                            backdropFilter: "blur(25px)",
                         }}
                     >
-                        <div className="row">
+                        <div className="row ">
                             <div className="col-lg-6">
-                                <MiniBox />
+                                <Miniboxholder />
+                                <MainProfile />
                             </div>
+                            <div className="col-lg-6 ">
+                                <Box>
+                                    <img
+                                        src="../img/hill.png"
+                                        alt=""
+                                        style={{
+                                            position: "absolute",
+                                            right: "0px",
+                                            bottom: "0px",
+                                            width: "950px",
+                                            height: "100%",
+                                        }}
+                                    />
+                                </Box>
+                            </div>
+                            {/* <Point /> */}
                         </div>
                     </Box>
                 </div>

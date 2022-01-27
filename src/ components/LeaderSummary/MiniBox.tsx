@@ -7,13 +7,14 @@ function MiniBox() {
         <>
             <Box
                 sx={{
-                    maxWidth: "200px",
+                    width: "180px",
                     backgroundColor: "rgba(255, 255, 255, 0.5)",
                     boxShadow: " 0px 4px 4px rgba(0, 0, 0, 0.25)",
                     textAlign: "center",
                     border: "2px solid #fff",
                     borderRadius: "12px",
                     paddingBottom: "12px",
+                    margin: "10px",
                 }}
             >
                 <Typography

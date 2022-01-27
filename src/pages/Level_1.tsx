@@ -13,6 +13,7 @@ import Summery from "../ components/Summery/Summery";
 import IconButton from "@mui/material/IconButton";
 import Hub from "../ components/Hub/Hub";
 import { Link } from "react-router-dom";
+import FloatingBtn from "../ components/Summery/FloatingBtn";
 const useStyles = makeStyles({
     normal: {
         borderRadius: "0",
@@ -47,6 +48,7 @@ function Level_1() {
     };
     return (
         <>
+            <FloatingBtn />
             <Box
                 sx={{
                     zIndex: "1100",
