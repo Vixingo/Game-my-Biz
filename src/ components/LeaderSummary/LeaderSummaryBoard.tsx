@@ -5,6 +5,7 @@ import LSBtable from "./LSBtable";
 import Level_1 from "../../pages/Level_1";
 import SummeryBread from "../Summery/SummeryBread";
 import Dashboard from "./Dashboard";
+import Point from "./Point";
 
 function LeaderSummaryBoard() {
     return (
@@ -12,7 +13,8 @@ function LeaderSummaryBoard() {
             {" "}
             <SummeryBread />
             <Dashboard />
-            {/* <LSBtable /> */}
+            <LSBtable />
+            <Point />
         </>
     );
 }

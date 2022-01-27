@@ -1,0 +1,15 @@
+[
+    {
+        "player": {
+            "tag": 1,
+            "rank": "../img/Rankimg.png",
+            "worker": {
+                "img": "../img/E1.png",
+                "name": "John Levi",
+                "mail": "wasd@gmkl.com"
+            },
+            "team": "../img/Rankimg.png",
+            "total": "1234455"
+        }
+    }
+]
