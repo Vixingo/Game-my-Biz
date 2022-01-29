@@ -20,6 +20,7 @@ function FloatingBtn() {
                     position: "fixed",
                     bottom: "50px",
                     right: "40px",
+                    zIndex: "5000",
                 }}
             >
                 <Fab>

@@ -10,6 +10,7 @@ import Level_1 from "./pages/Level_1";
 import LeaderSummaryBoard from "./ components/LeaderSummary/LeaderSummaryBoard";
 import Summery from "./ components/Summery/Summery";
 import Hub from "./ components/Hub/Hub";
+import Leaderboard from "./pages/Leaderboard";
 
 const theme = createTheme({
     palette: {
@@ -28,7 +29,7 @@ function App(): JSX.Element {
                 <Route exact path="/levelup" component={Summery} />
                 <Route exact path="/dashboard" component={Summery} />
                 <Route exact path="/hub" component={Hub} />
-
+                <Route exact path="/leaderboard" component={Leaderboard} />
                 {/* <Route exact path="/" component={LoginPage} />
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/levelup" component={Level_1} />

@@ -22,7 +22,14 @@ function LSBtable() {
                     <div className="col-lg-9">
                         <LeaderTable />
                         <Stack sx={{ alignItems: "end" }}>
-                            <Pagination count={3} sx={{ mt: 2 }} />
+                            <Pagination
+                                count={3}
+                                variant="outlined"
+                                color="primary"
+                                sx={{
+                                    mt: 2,
+                                }}
+                            />
                         </Stack>
                     </div>
                     <div className="col-lg-3">

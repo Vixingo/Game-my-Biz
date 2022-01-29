@@ -8,68 +8,94 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { Stack, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import tabledata from "../../tabledata.json";
 
-interface Column {
-    id: "name" | "code" | "population" | "size" | "density";
-    label: string;
-    minWidth?: number;
-    align?: "right";
-    format?: (value: number) => string;
-}
-
-const columns: Column[] = [
-    { id: "name", label: "#", minWidth: 170 },
-    { id: "code", label: "RANK", minWidth: 100 },
-    {
-        id: "population",
-        label: "WORKER",
-        minWidth: 170,
-        align: "right",
-        format: (value: number) => value.toLocaleString("en-US"),
+const useStyles = makeStyles({
+    userdata: {
+        background:
+            "linear-gradient(135deg, rgba(255, 0, 128, 0.65) 0%, rgba(121, 40, 202, 0.65) 100%)",
+        "& > :not(style)": {
+            color: "#fff !important",
+        },
     },
-    {
-        id: "size",
-        label: "TEAM",
-        minWidth: 170,
-        align: "right",
-        format: (value: number) => value.toLocaleString("en-US"),
-    },
-    {
-        id: "density",
-        label: "TOTAL POINTS",
-        minWidth: 170,
-        align: "right",
-        format: (value: number) => value.toLocaleString("en-US"),
-    },
-];
+});
+const tableData = tabledata;
 
-interface Data {
-    name: string;
-    code: string;
-    population: number;
-    size: number;
-    density: number;
+function Tbr(props: {
+    rank: Number;
+    rankP: string;
+    rankImg: string;
+    workerImg: string;
+    workerName: string;
+    workerMail: string;
+    teamImg: string;
+    points: number | string;
+}) {
+    return (
+        <>
+            <TableRow hover>
+                <TableCell
+                    align="center"
+                    sx={{
+                        fontSize: "16px",
+                        fontWeight: "600",
+                        backgroundImage: props.rankP,
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                    }}
+                >
+                    {props.rank}
+                </TableCell>
+                <TableCell align="center">
+                    <img src={props.rankImg} alt="" />
+                </TableCell>
+                <TableCell align="center">
+                    <Stack
+                        flexDirection={"row"}
+                        sx={{ justifyContent: "space-between" }}
+                    >
+                        <img
+                            src={props.workerImg}
+                            alt=""
+                            style={{
+                                width: "45px",
+                                borderRadius: "50%",
+                            }}
+                        />
+                        <Typography
+                            sx={{
+                                textAlign: "left",
+                                color: "#141414",
+                                fontWeight: "600",
+                                fontSize: "16px",
+                            }}
+                        >
+                            {props.workerName}
+                            <Typography sx={{ color: "#8392AB" }}>
+                                {props.workerMail}{" "}
+                            </Typography>
+                        </Typography>
+                    </Stack>
+                </TableCell>
+                <TableCell align="center">
+                    <img src={props.teamImg} alt="" />
+                </TableCell>
+                <TableCell
+                    align="center"
+                    sx={{
+                        color: "#141414",
+                        fontWeight: "600",
+                        fontSize: "18px",
+                    }}
+                >
+                    {props.points}{" "}
+                </TableCell>
+            </TableRow>
+        </>
+    );
 }
-
-function createData(
-    name: string,
-    code: string,
-    population: number,
-    size: number
-): Data {
-    const density = population;
-    return { name, code, population, size, density };
-}
-
-const rows = [
-    createData("India", "IN", 1324171354, 3287263),
-    createData("China", "CN", 1403500365, 9596961),
-    createData("Italy", "IT", 60483973, 301340),
-    createData("United States", "US", 327167434, 9833520),
-    createData("Canada", "CA", 37602103, 9984670),
-    createData("Canada", "CA", 37602103, 9984670),
-];
-
 function LeaderTable() {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -84,12 +110,18 @@ function LeaderTable() {
         setRowsPerPage(+event.target.value);
         setPage(0);
     };
+    const classes = useStyles();
+
     return (
         <>
             <Paper sx={{ width: "100%", borderRadius: "16px" }}>
                 <TableContainer sx={{ borderRadius: "16px" }}>
                     <Table stickyHeader aria-label="sticky table">
-                        <TableHead>
+                        <TableHead
+                            sx={{
+                                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                            }}
+                        >
                             <TableRow>
                                 <TableCell
                                     align="left"
@@ -97,7 +129,7 @@ function LeaderTable() {
                                     sx={{
                                         borderColor: "#FFF",
                                         color: "#8392AB",
-                                        fontWeight: 500,
+                                        fontWeight: 600,
                                         fontSize: "20px",
                                     }}
                                 >
@@ -109,63 +141,141 @@ function LeaderTable() {
                             </TableRow>
                             <TableRow
                                 sx={{
-                                    boxShadow:
-                                        "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                                    "&> :not(style)": {
+                                        color: "#8392AB",
+                                    },
                                 }}
                             >
-                                {columns.map((column) => (
-                                    <TableCell
-                                        key={column.id}
-                                        align={column.align}
-                                        style={{
-                                            top: 57,
-                                            minWidth: column.minWidth,
-                                        }}
-                                    >
-                                        {column.label}
-                                    </TableCell>
-                                ))}
+                                <TableCell
+                                    align="center"
+                                    style={{
+                                        top: 57,
+                                        minWidth: 120,
+                                        fontWeight: "700",
+                                        fontSize: "16px",
+                                    }}
+                                >
+                                    # <ArrowDropDownIcon />
+                                </TableCell>
+                                <TableCell
+                                    align="center"
+                                    style={{
+                                        top: 57,
+                                        minWidth: 170,
+                                        fontWeight: "700",
+                                        fontSize: "16px",
+                                    }}
+                                >
+                                    RANK
+                                </TableCell>
+                                <TableCell
+                                    align="center"
+                                    style={{
+                                        top: 57,
+                                        minWidth: 170,
+                                        fontWeight: "700",
+                                        fontSize: "16px",
+                                    }}
+                                >
+                                    WORKER{" "}
+                                </TableCell>
+                                <TableCell
+                                    align="center"
+                                    style={{
+                                        top: 57,
+                                        minWidth: 170,
+                                        fontWeight: "700",
+                                        fontSize: "16px",
+                                    }}
+                                >
+                                    TEAM
+                                </TableCell>
+                                <TableCell
+                                    align="center"
+                                    style={{
+                                        top: 57,
+                                        minWidth: 170,
+                                        fontWeight: "700",
+                                        fontSize: "16px",
+                                    }}
+                                >
+                                    TOTAL POINTS
+                                </TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {rows
-                                .slice(
-                                    page * rowsPerPage,
-                                    page * rowsPerPage + rowsPerPage
-                                )
-                                .map((row) => {
-                                    return (
-                                        <TableRow
-                                            hover
-                                            role="checkbox"
-                                            tabIndex={-1}
-                                            key={row.code}
+                            {tableData.map((data, index) => {
+                                return (
+                                    <Tbr
+                                        rank={data.tabledata.rank}
+                                        rankP={data.tabledata.rankP}
+                                        rankImg={data.tabledata.rankImg}
+                                        workerImg={data.tabledata.workerImg}
+                                        workerName={data.tabledata.workerName}
+                                        workerMail={data.tabledata.workerMail}
+                                        teamImg={data.tabledata.teamImg}
+                                        points={data.tabledata.points}
+                                    />
+                                );
+                            })}
+                            <TableRow hover className={classes.userdata}>
+                                <TableCell
+                                    align="center"
+                                    sx={{
+                                        fontSize: "16px",
+                                        fontWeight: "600",
+                                        backgroundImage: "",
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundPosition: "center",
+                                    }}
+                                >
+                                    15
+                                </TableCell>
+                                <TableCell align="center">
+                                    <img src="../img/Rankimg.png" alt="" />
+                                </TableCell>
+                                <TableCell align="center">
+                                    <Stack
+                                        flexDirection={"row"}
+                                        sx={{ justifyContent: "space-between" }}
+                                    >
+                                        <img
+                                            src="../img/profile.png"
+                                            alt=""
+                                            style={{
+                                                width: "45px",
+                                                borderRadius: "50%",
+                                            }}
+                                        />
+                                        <Typography
                                             sx={{
-                                                "& > :nth-last-child": {
-                                                    backgroundColor: "red",
-                                                },
+                                                textAlign: "left",
+                                                color: "#fff",
+                                                fontWeight: "600",
+                                                fontSize: "16px",
                                             }}
                                         >
-                                            {columns.map((column) => {
-                                                const value = row[column.id];
-                                                return (
-                                                    <TableCell
-                                                        key={column.id}
-                                                        align={column.align}
-                                                    >
-                                                        {column.format &&
-                                                        typeof value ===
-                                                            "number"
-                                                            ? column.format(
-                                                                  value
-                                                              )
-                                                            : value}
-                                                    </TableCell>
-                                                );
-                                            })}
-                                        </TableRow>
-                                    );
-                                })}
+                                            YOU
+                                            <Typography sx={{ color: "#fff" }}>
+                                                admin@gmail.com
+                                            </Typography>
+                                        </Typography>
+                                    </Stack>
+                                </TableCell>
+                                <TableCell align="center">
+                                    <img src="../img/Rimg.png" alt="" />
+                                </TableCell>
+                                <TableCell
+                                    align="center"
+                                    sx={{
+                                        color: "#fff",
+                                        fontWeight: "600",
+                                        fontSize: "18px",
+                                    }}
+                                >
+                                    2,518,695
+                                </TableCell>
+                            </TableRow>
                         </TableBody>
                     </Table>
                 </TableContainer>

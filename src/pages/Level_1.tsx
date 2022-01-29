@@ -134,7 +134,8 @@ function Level_1() {
                             <SettingsIcon />
                         </IconButton>{" "}
                     </Link>
-                    <IconButton
+                    <Link
+                        to={"/leaderboard"}
                         className={
                             toggleState === 4
                                 ? classes.activated
@@ -142,8 +143,10 @@ function Level_1() {
                         }
                         onClick={() => toggleTab(4)}
                     >
-                        <NewspaperIcon />
-                    </IconButton>
+                        <IconButton>
+                            <NewspaperIcon />
+                        </IconButton>
+                    </Link>
                     <IconButton
                         className={
                             toggleState === 5
