@@ -261,7 +261,7 @@ function Login() {
                             >
                                 Don’t have an accout?{" "}
                                 <Link
-                                    to={"#"}
+                                    to={"/signup"}
                                     style={{
                                         textDecoration: "none",
                                         color: "#EE238A",

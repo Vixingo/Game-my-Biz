@@ -11,6 +11,7 @@ import LeaderSummaryBoard from "./ components/LeaderSummary/LeaderSummaryBoard";
 import Summery from "./ components/Summery/Summery";
 import Hub from "./ components/Hub/Hub";
 import Leaderboard from "./pages/Leaderboard";
+import Signup from "./ components/Signup/Signup";
 
 const theme = createTheme({
     palette: {
@@ -23,13 +24,15 @@ function App(): JSX.Element {
     return (
         <ThemeProvider theme={theme}>
             <BrowserRouter>
+                <Route exact path="/login" component={LoginPage} />
+                <Route exact path="/signup" component={Signup} />
                 <Route path="/" component={Level_1} />
                 {/* <Redirect from="/" to="/dashboard" /> */}
                 <Route exact path="/" component={LeaderSummaryBoard} />
                 <Route exact path="/levelup" component={Summery} />
                 <Route exact path="/dashboard" component={Summery} />
                 <Route exact path="/hub" component={Hub} />
-                <Route exact path="/leaderboard" component={Leaderboard} />
+                <Route exact path="/leaderboard" component={Leaderboard} />{" "}
                 {/* <Route exact path="/" component={LoginPage} />
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/levelup" component={Level_1} />
