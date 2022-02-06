@@ -21,6 +21,10 @@ function Challenge() {
                         px: 5,
                         py: 5,
                         mb: 5,
+
+                        "@media(max-width : 767px)": {
+                            display: "none",
+                        },
                     }}
                 >
                     <Typography variant="h4">

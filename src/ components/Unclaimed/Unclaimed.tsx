@@ -14,6 +14,10 @@ function Unclaimed() {
                         backgroundPosition: "bottom ",
                         borderRadius: "80px",
                         mb: 5,
+
+                        "@media(max-width : 767px)": {
+                            display: "none",
+                        },
                     }}
                 >
                     <Box className="row">

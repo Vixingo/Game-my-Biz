@@ -12,6 +12,7 @@ import Summery from "./ components/Summery/Summery";
 import Hub from "./ components/Hub/Hub";
 import Leaderboard from "./pages/Leaderboard";
 import Signup from "./ components/Signup/Signup";
+import FloatingBtn from "./ components/Summery/FloatingBtn";
 
 const theme = createTheme({
     palette: {
@@ -26,6 +27,7 @@ function App(): JSX.Element {
             <BrowserRouter>
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/signup" component={Signup} />
+                <Route exact path="/home-v1" component={Homepage} />
                 <Route path="/" component={Level_1} />
                 {/* <Redirect from="/" to="/dashboard" /> */}
                 <Route exact path="/" component={LeaderSummaryBoard} />
@@ -36,7 +38,7 @@ function App(): JSX.Element {
                 {/* <Route exact path="/" component={LoginPage} />
                 <Route exact path="/login" component={LoginPage} />
                 <Route exact path="/levelup" component={Level_1} />
-                <Route exact path="/home" component={Homepage} />
+               
                 <Route exact path="/claim" component={Claimpage} />
                 <Route exact path="/level" component={Levelup} /> */}
             </BrowserRouter>

@@ -8,7 +8,16 @@ function Activity() {
     return (
         <>
             <section className="Activity">
-                <Box className="container" sx={{ mb: 5, mt: 8 }}>
+                <Box
+                    className="container"
+                    sx={{
+                        mb: 5,
+                        mt: 8,
+                        "@media(max-width : 767px)": {
+                            display: "none",
+                        },
+                    }}
+                >
                     <Stack
                         flexDirection={"row"}
                         alignItems={"end"}

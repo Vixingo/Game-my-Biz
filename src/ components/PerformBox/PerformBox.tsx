@@ -58,6 +58,12 @@ function PerformBox(props: {
                     justifyContent={"space-between"}
                     maxWidth={"330px"}
                     margin={"0 auto"}
+                    sx={{
+                        "@media(max-width : 767px)": {
+                            marginLeft: "30px",
+                            marginRight: "30px",
+                        },
+                    }}
                 >
                     <Typography
                         display={"flex"}
@@ -65,6 +71,9 @@ function PerformBox(props: {
                         variant="h3"
                         sx={{
                             color: "#717171",
+                            "@media(max-width : 767px)": {
+                                fontSize: "35px",
+                            },
                         }}
                     >
                         {props.amount}
@@ -73,6 +82,9 @@ function PerformBox(props: {
                             variant="h6"
                             sx={{
                                 ml: "16px",
+                                "@media(max-width : 767px)": {
+                                    fontSize: "20px",
+                                },
                             }}
                         >
                             {plus}

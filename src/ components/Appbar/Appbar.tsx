@@ -28,9 +28,15 @@ function Appbar() {
 
     return (
         <>
-            <div
+            <Box
                 className="container px-0 mt-4"
-                style={{ backgroundColor: "#fff", borderRadius: "95.5px" }}
+                sx={{
+                    backgroundColor: "#fff",
+                    borderRadius: "95.5px",
+                    "@media (max-width: 767px)": {
+                        display: "none",
+                    },
+                }}
             >
                 <Box sx={{ flexGrow: 1 }}>
                     <AppBar className={classes.appbar} position="static">
@@ -126,7 +132,7 @@ function Appbar() {
                         </Toolbar>
                     </AppBar>
                 </Box>
-            </div>
+            </Box>
         </>
     );
 }

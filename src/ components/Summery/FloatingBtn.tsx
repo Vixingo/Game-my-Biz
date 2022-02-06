@@ -21,6 +21,9 @@ function FloatingBtn() {
                     bottom: "50px",
                     right: "40px",
                     zIndex: "5000",
+                    "@media(max-width:767px)": {
+                        display: "none",
+                    },
                 }}
             >
                 <Fab>

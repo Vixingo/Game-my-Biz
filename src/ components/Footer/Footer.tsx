@@ -18,12 +18,16 @@ function Footer() {
     const classes = useStyles();
     return (
         <>
-            <section
+            <Box
                 className="Footer"
-                style={{
+                sx={{
                     backgroundImage: "url(../img/footer_Bg.png)",
                     backgroundSize: "100%",
                     backgroundRepeat: "no-repeat",
+
+                    "@media(max-width : 767px)": {
+                        display: "none",
+                    },
                 }}
             >
                 <Box>
@@ -232,7 +236,7 @@ function Footer() {
                     </div>
                 </Box>
                 {/* <hr /> */}
-            </section>
+            </Box>
         </>
     );
 }

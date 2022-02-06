@@ -1,6 +1,8 @@
 import React from "react";
 import Activity from "../ components/Activity/Activity";
 import Appbar from "../ components/Appbar/Appbar";
+import MobileAppbar from "../ components/Appbar/MobileAppbar";
+import MobileFooter from "../ components/Appbar/MobileFooter";
 import Challenge from "../ components/Challenge/Challenge";
 import Footer from "../ components/Footer/Footer";
 import Hero from "../ components/Hero/Hero";
@@ -12,6 +14,7 @@ function Homepage() {
     return (
         <>
             <Appbar />
+            <MobileAppbar />
             <Hero />
             <Yetiinfo />
             <LeaderBoard />
@@ -19,6 +22,7 @@ function Homepage() {
             <Challenge />
             <Activity />
             <Footer />
+            <MobileFooter />
         </>
     );
 }

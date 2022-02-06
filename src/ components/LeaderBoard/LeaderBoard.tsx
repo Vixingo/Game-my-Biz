@@ -54,6 +54,10 @@ function LeaderBoard(): JSX.Element {
                     borderRadius: "106px",
                     boxShadow: "0px 18px 36px 6px rgba(135, 135, 135, 0.1)",
                     mb: 5,
+
+                    "@media(max-width : 767px)": {
+                        display: "none",
+                    },
                 }}
             >
                 <section className="Home_tabs">

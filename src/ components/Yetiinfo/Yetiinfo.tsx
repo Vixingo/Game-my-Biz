@@ -36,10 +36,15 @@ const Yetiboxdata = [
 function Yetiinfo() {
     return (
         <>
-            <div
+            <Box
                 className="container"
-                style={{
+                sx={{
                     margin: "100px auto 10px auto",
+
+                    "@media(max-width : 767px)": {
+                        marginTop: "0",
+                        marginBottom: "200px",
+                    },
                 }}
             >
                 <div className="row">
@@ -57,6 +62,11 @@ function Yetiinfo() {
                             direction={"row"}
                             flexWrap={"wrap"}
                             justifyContent={"center"}
+                            sx={{
+                                "@media(max-width : 767px)": {
+                                    display: "none",
+                                },
+                            }}
                         >
                             {Yetiboxdata.map((val, index) => {
                                 return (
@@ -71,7 +81,7 @@ function Yetiinfo() {
                         </Stack>
                     </div>
                 </div>
-            </div>
+            </Box>
         </>
     );
 }
